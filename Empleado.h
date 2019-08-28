@@ -22,16 +22,25 @@
 #include <iostream>
 #include <time.h>
 
+using namespace std;
 class Empleado
 {
 
 protected:
+	string nombre;
+	int numeroEmpleado;
+	int anioExperiencia;
+	float salarioBase;
+	bool flagRevision;
 
 public:
-
+	Empleado();
+	Empleado(const string &nombre, int anioExperiencia, float salarioBase);
+	string reporteEmpleado();
 
 private:
-
+	int EmpleaaumentaSalario(const int *);
+	static void procesoRevision(bool *);
 };
 
 
