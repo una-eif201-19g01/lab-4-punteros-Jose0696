@@ -38,12 +38,21 @@ public:
 	Empleado(const string &nombre, int anioExperiencia, float salarioBase);
 	string reporteEmpleado();
 
+	string getNombre();
+	int getNumeroEmpleado();
+	int getAnioExperiencia();
+	float getSalarioBase();
+	bool getFlagRevision();
+
+	void setNombre(string);
+	void setNumeroEmpleado(int);
+	void setAnioExperiencia(int);
+	void setSalarioBase(float);
+	void setFlagRevision(bool);
+
 private:
 	int EmpleaaumentaSalario(const int *);
 	static void procesoRevision(bool *);
 };
-
-
-
 
 #endif //EMPLEADOPUNTEROS_EMPLEADO_H
