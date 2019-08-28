@@ -1,0 +1,3 @@
+C:/Users/Jose Sequeira/source/repos/una-eif201-19g01/lab-4-punteros-Jose0696/out/build/x64-Debug/CMakeFiles/EmpleadoPuntero.dir
+C:/Users/Jose Sequeira/source/repos/una-eif201-19g01/lab-4-punteros-Jose0696/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Jose Sequeira/source/repos/una-eif201-19g01/lab-4-punteros-Jose0696/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

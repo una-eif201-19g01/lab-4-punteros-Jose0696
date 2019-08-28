@@ -19,6 +19,22 @@
 
 
 #include <string>
+#include <iostream>
+#include <time.h>
+
+class Empleado
+{
+
+protected:
+
+public:
+
+
+private:
+
+};
+
+
 
 
 #endif //EMPLEADOPUNTEROS_EMPLEADO_H
