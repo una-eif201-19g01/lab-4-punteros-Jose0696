@@ -22,6 +22,7 @@
 #include <iostream>
 #include <time.h>
 
+
 const int NUMERO_MAXIMO = 100;
 
 using namespace std;
@@ -37,16 +38,16 @@ protected:
 
 public:
 	Empleado();
-	Empleado(const string &nom, int anioExp, float salBase);
+	Empleado(const string &nombre, int anioExperiencia, float salarioBase,bool flagRevision);
 	string reporteEmpleado();
 	string getNombre();
-	int getNumeroEmpleado();
+	int getNumeroEmpleado()const;
 	int getAnioExperiencia();
 	float getSalarioBase();
 	bool getFlagRevision();
 
 	void setNombre(string);
-	void setNumeroEmpleado(int);
+	void setNumeroEmpleado(int&);
 	void setAnioExperiencia(int);
 	void setSalarioBase(float);
 	void setFlagRevision(bool);

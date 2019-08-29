@@ -16,26 +16,32 @@
 #include"Empleado.h"
 
 Empleado::Empleado(){
+	anioExperiencia = 0;
+	flagRevision = 1;
+	salarioBase = 0;
 	numeroEmpleado = rand() % NUMERO_MAXIMO;
 }
 
-Empleado::Empleado(const string & nom, int anioExperiencia, float salarioBase):nombre(nombre),
-anioExperiencia(anioExperiencia),salarioBase(salarioBase){
+Empleado::Empleado(const string& nombre, int anioExperiencia, float salarioBase, bool flagRevision ) :nombre(nombre),
+anioExperiencia(anioExperiencia), salarioBase(salarioBase),flagRevision(flagRevision) {
 	numeroEmpleado = rand() % NUMERO_MAXIMO;
+	
 }
+
+
 
 string Empleado::reporteEmpleado(){
 	string reporte = "";
 	string random;
-	if (getFlagRevision() == false) {
-		random = "NO";
+	if (getFlagRevision() == true) {
+		random = "SI";
 	}
 	else {
-		random = "SI"; 
+		random = "NO"; 
 	}
 	reporte = "Empleado #[" + to_string(getNumeroEmpleado()) + "]\n\tNombre [" + getNombre() + "]\n\tAnios de experiencia[" +
 		to_string(getAnioExperiencia()) + "]\n\tSalario Inicial[" + to_string(getSalarioBase()) + "]\n\tSalario Acumulado[" +
-		to_string(EmpleaaumentaSalario(&anioExperiencia)) + "]\n\tNecesita Revision[" + random + "]]";
+		to_string(EmpleaaumentaSalario(&anioExperiencia)) + "]\n\tNecesita Revision[" + random + "]";
 	return reporte;
 }
 
@@ -43,7 +49,7 @@ string Empleado::getNombre(){
 	return nombre;
 }
 
-int Empleado::getNumeroEmpleado(){
+int Empleado::getNumeroEmpleado()const{
 	return numeroEmpleado;
 }
 
@@ -63,7 +69,7 @@ void Empleado::setNombre(string nom){
 	nombre = nom;
 }
 
-void Empleado::setNumeroEmpleado(int emp){
+void Empleado::setNumeroEmpleado(int&emp){
 	numeroEmpleado = emp;
 }
 
@@ -80,18 +86,24 @@ void Empleado::setFlagRevision(bool rev){
 }
 
 int Empleado::EmpleaaumentaSalario(const int *anioExperiencia){
-	float aumento = 0;
-	if (*anioExperiencia > 1 && *anioExperiencia < 3) {
-		aumento += (aumento * 0.02);
+	float aumento=0;
+	float salario = salarioBase;
+	if (*anioExperiencia==1) {
+		aumento = salario + (salario * 0.02);
 	}
-	else if (*anioExperiencia >= 3) {
-		aumento += (aumento * 0.05);
+	if (*anioExperiencia == 2) {
+		aumento = salario + (salario * 0.04);
+	}
+	else if (*anioExperiencia>=3) {
+		aumento = salario + (salario * 0.05);
 	}
 	return aumento;
 }
 
 void Empleado::procesoRevision(bool * flagRevision){
-	if (rand() % 2 == 0) {
-		*flagRevision = true;
-	}
+	if (rand() % 2 == 0)
+		* flagRevision = true;
+	else
+		*flagRevision = false;
+	
 }
